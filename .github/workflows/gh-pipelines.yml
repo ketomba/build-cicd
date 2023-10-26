@@ -5,21 +5,26 @@ on:
 
 jobs:
   build:
+    name: Build and Push Artifact
     runs-on: ubuntu-latest
     steps:
       - name: build and push artifacts
         run: echo "build and push artifacts"
   sit:
+    name: sit
     runs-on: ubuntu-latest
     environment:
       name: "dev"
+    needs: build
     steps:
       - name: deploy to sit
         run: echo "deploy to sit"
   prod:
+    name: prod
     runs-on: ubuntu-latest
     environment: 
       name: prod
+    needs: sit
     steps:
       - name: deploy to prod
         run: echo "deploy to prod"
