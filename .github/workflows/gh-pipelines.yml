@@ -14,7 +14,7 @@ jobs:
     name: sit
     runs-on: ubuntu-latest
     environment:
-      name: "dev"
+      name: dev
     needs: build
     steps:
       - name: deploy to sit
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: prod
-    needs: sit
+    needs: build
     steps:
       - name: deploy to prod
         run: echo "deploy to prod"
