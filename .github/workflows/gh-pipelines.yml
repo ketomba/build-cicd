@@ -6,5 +6,5 @@ on:
 job:
   deploy:
     runs-on: ubuntu-latest
-      steps:
-        - run: echo "testing"
+      - steps:
+        run: echo "testing"
