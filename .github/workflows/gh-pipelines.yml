@@ -6,5 +6,6 @@ on:
 job:
   deploy:
     runs-on: ubuntu-latest
-      - steps:
-        run: echo "testing"
+      steps:
+        - name: build and push artifacts
+          run: echo "testing"
