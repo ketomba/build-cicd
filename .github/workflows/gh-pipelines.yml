@@ -4,8 +4,22 @@ on:
     branches: ["master","dev"]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: build and push artifacts
-        run: echo "test"
+        run: echo "build and push artifacts"
+  sit:
+    runs-on: ubuntu-latest
+    environment:
+      name: "dev"
+    steps:
+      - name: deploy to sit
+        run: echo "deploy to sit"
+  prod:
+    runs-on: ubuntu-latest
+    environment: 
+      name: prod
+    steps:
+      - name: deploy to prod
+        run: echo "deploy to prod"
